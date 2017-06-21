@@ -1,6 +1,6 @@
 ---
   name: "get_metric_data"
-  runner_type: "run-python"
+  runner_type: "python-script"
   description: "Get metric data for metric."
   enabled: true
   entry_point: "get_metric_data.py"
