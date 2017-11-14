@@ -15,11 +15,11 @@
       items:
         type: "string"
       required: true
-    from:
+    time_from:
       type: "string"
       description: "Start time (ISO format, e.g. 2014-03-01T20:59:00+00:00)"
       required: true
-    to:
+    time_to:
       type: "string"
       description: "End time (ISO format, e.g. 2014-03-01T20:59:00+00:00)"
       required: true

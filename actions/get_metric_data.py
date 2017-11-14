@@ -21,16 +21,16 @@ class GetMetricDataAction(Action):
         self.headers['X-Api-Key'] = self.config['api_key']
 
     def run(self, app_id, metric_base_name,
-            actual_metrics, time_from, time_to):
-        body = self._get_body(metric_base_name, actual_metrics, time_from, time_to)
+            metrics, time_from, time_to):
+        body = self._get_body(metric_base_name, metrics, time_from, time_to)
         self.url = self.base_url + app_id + self.metrics_url
         resp = requests.get(self.url, headers=self.headers, data=body).json()
 
         return resp
 
-    def _get_body(self, metric_base_name, actual_metrics, time_from, time_to):
+    def _get_body(self, metric_base_name, metrics, time_from, time_to):
         params = 'names[]=' + metric_base_name
-        params = params + '&' + '&'.join(['values[]=' + metric for metric in actual_metrics])
+        params = params + '&' + '&'.join(['values[]=' + m for m in metrics])
         params = params + '&' + 'from=' + time_from
         params = params + '&' + 'to=' + time_to
         params = params + '&' + 'summarize=' + 'true'
