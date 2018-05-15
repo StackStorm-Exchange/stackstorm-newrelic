@@ -260,7 +260,7 @@ class LegacyNewRelicHookSensor(Sensor):
                                    server['name'], server['health_status'])
                 eventlet.spawn_after(self._normal_report_delay, self._dispatch_server_normal,
                                      payload, attempt_no + 1)
-        except:
+        except Exception:
             self._log.exception('Failed delay dispatch. Payload %s.', payload)
 
     def _dispatch_trigger(self, trigger, payload):
