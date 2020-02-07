@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.4
+
+- Add explicit support for Python 2 and 3
+
 ## 0.4.3
 
 - Fixed Python/YAML mismatch with `get_metric_data` action
