@@ -7,6 +7,9 @@ keywords:
   - monitoring
   - app monitoring
   - application level monitoring
-version: 0.4.3
+version: 0.4.4
 author : StackStorm, Inc.
 email : info@stackstorm.com
+python_versions:
+  - "2"
+  - "3"
